@@ -44,12 +44,15 @@ function runCommand(cmd) {
   const output = document.getElementById('terminal-output');
   
   if (cmd === 'about') {
-    output.innerHTML += `<p class="term-line">> <span class="highlight">MIRIYALA ANUSHA</span>: Computer Science & Engineering student specializing in Software & AI development.</p>`;
+    output.innerHTML += `<div style="color: #e2e8f0; margin-top: 6px;">> <span class="highlight">MIRIYALA ANUSHA</span>: Computer Science & Engineering student specializing in Software & AI development.</div>`;
   } else if (cmd === 'skills') {
-    output.innerHTML += `<p class="term-line">> Primary Skills: Python, AI/ML, Web Development, SQL, Cybersecurity, Networking.</p>`;
+    output.innerHTML += `<div style="color: #e2e8f0; margin-top: 6px;">> Primary Skills: Python, AI/ML, Web Development, SQL, Cybersecurity.</div>`;
   } else if (cmd === 'contact') {
-    output.innerHTML += `<p class="term-line">> Reach out via Email or LinkedIn to connect!</p>`;
+    output.innerHTML += `<div style="color: #e2e8f0; margin-top: 6px;">> Reach out via Email or LinkedIn to connect!</div>`;
   } else if (cmd === 'clear') {
     output.innerHTML = `<p class="term-line">Type <span class="highlight">'help'</span> or click buttons below for quick commands.</p>`;
   }
+  
+  // Auto-scroll terminal to bottom
+  output.scrollTop = output.scrollHeight;
 }
