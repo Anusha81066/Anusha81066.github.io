@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIRIYALA ANUSHA | CSE Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <nav class="sidebar">
+    <div class="brand">
+      <div class="logo">MA</div>
+      <h2>ANUSHA</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="active"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="#terminal"><i class="fas fa-terminal"></i> Terminal</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header id="about" class="glass-card hero-section">
+      <div class="hero-text">
+        <div class="badge-container">
+          <span class="badge">B.E. Computer Science & Engineering</span>
+        </div>
+        
+        <div class="name-tile">
+          <div class="tile-glow"></div>
+          <h1 class="styled-name">
+            <span class="first-name">MIRIYALA</span>
+            <span class="last-name">ANUSHA</span>
+          </h1>
+          <div class="tile-bar"></div>
+        </div>
+
+        <p class="subtitle">CSE Specialist | AI & Software Developer</p>
+        <p class="bio">
+          Passionate Computer Science & Engineering student specializing in scalable software systems, intelligent web applications, and secure cloud/network infrastructures.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary-btn">View Projects</a>
+          <a href="#contact" class="btn secondary-btn">Connect</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Technical Proficiency</h2>
+      <div class="skills-grid">
+        <div class="glass-card skill-card">
+          <i class="fab fa-python skill-icon"></i>
+          <h3>Python & AI</h3>
+          <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+        <div class="glass-card skill-card">
+          <i class="fas fa-network-wired skill-icon"></i>
+          <h3>Network & Security</h3>
+          <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+        </div>
+        <div class="glass-card skill-card">
+          <i class="fab fa-js-square skill-icon"></i>
+          <h3>Web Development</h3>
+          <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+        </div>
+        <div class="glass-card skill-card">
+          <i class="fas fa-database skill-icon"></i>
+          <h3>SQL & Databases</h3>
+          <div class="progress-bar"><div class="progress" style="width: 82%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="glass-card project-card" onclick="openModal('sentiment')">
+          <div class="project-tag">AI / Machine Learning</div>
+          <h3>Sentiment Analysis Web Application</h3>
+          <p>Flask & Python-backed natural language processing engine for sentiment detection.</p>
+          <button class="btn-link">Explore Details &rarr;</button>
+        </div>
+        <div class="glass-card project-card" onclick="openModal('securedata')">
+          <div class="project-tag">Data Security & SQL</div>
+          <h3>SecureData CDP System</h3>
+          <p>Batch processing and automated customer data masking architecture for enterprise safety.</p>
+          <button class="btn-link">Explore Details &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="terminal" class="section">
+      <h2 class="section-title">Quick Action Terminal</h2>
+      <div class="glass-card terminal-card">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">anusha@cse-terminal:~</span>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+          <p class="term-line">Type <span class="highlight">'help'</span> or click buttons below for quick commands.</p>
+        </div>
+        <div class="terminal-controls">
+          <button onclick="runCommand('about')">about</button>
+          <button onclick="runCommand('skills')">skills</button>
+          <button onclick="runCommand('contact')">contact</button>
+          <button onclick="runCommand('clear')">clear</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="glass-card contact-card">
+        <p>Interested in collaborating or discussing technical projects? Reach out directly!</p>
+        <div class="contact-buttons">
+          <a href="mailto:anusha@example.com" class="btn primary-btn"><i class="fas fa-envelope"></i> Send Email</a>
+          <a href="https://linkedin.com" target="_blank" class="btn secondary-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="project-modal" class="modal">
+    <div class="modal-content glass-card">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title">Project Details</h3>
+      <p id="modal-description">Detailed overview of the selected project.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
